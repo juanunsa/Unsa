@@ -1,0 +1,42 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="230" gr:y="20" id="wv1#area1#page2" name="Convocatorias" landmark="true">
+  <ViewComponents>
+    <List gr:x="140" gr:y="0" id="wv1#area1#page2#lst1" checkable="false" distinct="false">
+      <DataBinding classServiceRes="BaseDatos$cls1"/>
+      <DisplayAttributes classServiceAttribute="BaseDatos$att1"/>
+      <DisplayAttributes classServiceAttribute="BaseDatos$att2"/>
+      <DisplayAttributes classServiceAttribute="BaseDatos$att3"/>
+      <DisplayAttributes classServiceAttribute="BaseDatos$att4"/>
+      <SortAttributes classServiceAttribute="BaseDatos$att2" order="ascending"/>
+      <ConditionalExpression id="wv1#area1#page2#lst1#sc1" defaultPolicy="fill" booleanOperator="or">
+        <AttributesCondition id="wv1#area1#page2#lst1#sc1#acond1" name="desde" predicate="contains" booleanOperator="or" implied="true" ignoreCase="true">
+          <AttributesConditionAttr classServiceAttribute="BaseDatos$att2"/>
+        </AttributesCondition>
+        <AttributesCondition id="wv1#area1#page2#lst1#sc1#acond2" name="hasta" predicate="contains" booleanOperator="or" implied="true" ignoreCase="true">
+          <AttributesConditionAttr classServiceAttribute="BaseDatos$att3"/>
+        </AttributesCondition>
+        <AttributesCondition id="wv1#area1#page2#lst1#sc1#acond3" name="cargo" predicate="contains" booleanOperator="or" implied="true" ignoreCase="true">
+          <AttributesConditionAttr classServiceAttribute="BaseDatos$att4"/>
+        </AttributesCondition>
+      </ConditionalExpression>
+    </List>
+    <Form gr:x="0" gr:y="0" id="wv1#area1#page2#frm1" name="busqueda">
+      <Events>
+        <OnSelectEvent id="wv1#area1#page2#frm1#oslte3" name="buscar" validate="true">
+          <NavigationFlow id="wv1#area1#page2#frm1#oslte3#nf3" to="wv1#area1#page2#lst1">
+            <ParameterBinding id="wv1#area1#page2#frm1#oslte3#nf3#par1" source="{wv1#area1#page2#frm1#fld1}value" target="wv1#area1#page2#lst1#sc1#acond3" name="filtro - cargo"/>
+            <ParameterBinding id="wv1#area1#page2#frm1#oslte3#nf3#par2" source="{wv1#area1#page2#frm1#fld1}value" target="wv1#area1#page2#lst1#sc1#acond1" name="filtro - desde"/>
+            <ParameterBinding id="wv1#area1#page2#frm1#oslte3#nf3#par3" source="{wv1#area1#page2#frm1#fld1}value" target="wv1#area1#page2#lst1#sc1#acond2" name="filtro - hasta"/>
+          </NavigationFlow>
+        </OnSelectEvent>
+      </Events>
+      <Field id="wv1#area1#page2#frm1#fld1" type="string" modifiable="true" name="filtro"/>
+      <DataBinding classServiceRes="BaseDatos$cls1"/>
+      <ConditionalExpression id="wv1#area1#page2#frm1#sc2" defaultPolicy="emptyAlwaysApplied" booleanOperator="and">
+        <KeyCondition id="wv1#area1#page2#frm1#sc2#kcond1" name="KeyCondition1" predicate="in" implied="false"/>
+      </ConditionalExpression>
+    </Form>
+  </ViewComponents>
+  <layout:Grid containerType="grid">
+    <layout:Row/>
+  </layout:Grid>
+</Page>

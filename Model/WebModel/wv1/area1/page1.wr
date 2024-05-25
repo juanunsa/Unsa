@@ -1,0 +1,10 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-10" gr:y="-15" id="wv1#area1#page1" name="Inicio" landmark="true">
+  <ViewComponents>
+    <Message gr:x="0" gr:y="0" id="wv1#area1#page1#msg1" name="Message 1">
+      <Message xml:space="preserve">Pagina Inicial del Servicio de Gesti&#243;n de Cargos Universitarios!!!!!</Message>
+    </Message>
+  </ViewComponents>
+  <layout:Grid containerType="grid">
+    <layout:Row/>
+  </layout:Grid>
+</Page>

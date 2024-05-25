@@ -1,0 +1,5 @@
+<wr-page>
+  <wr-content for="page-content">
+    <wd-alert [messages]="valueOf('main/msg1/messages')"></wd-alert>
+  </wr-content>
+</wr-page>

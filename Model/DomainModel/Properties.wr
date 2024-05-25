@@ -1,0 +1,34 @@
+<DomainModel xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:srs="http://www.webratio.com/2017/IFML/ServerResources">
+  <Class gr:x="150" gr:y="160" id="WUser" name="App User" singleton="true" attributeOrder="wUserOID wUsername">
+    <Attribute id="wUserOID" key="true" name="oid" type="integer"/>
+    <Attribute id="wUsername" name="username" type="string"/>
+  </Class>
+  <Class gr:x="450" gr:y="170" id="WRole" name="App Role" attributeOrder="wRoleOID wRoleName">
+    <Attribute id="wRoleOID" key="true" name="oid" type="integer"/>
+    <Attribute id="wRoleName" name="name" type="string"/>
+  </Class>
+  <Association id="WUser2WRole_WRole2WUser" name="AppUser_AppRole" sourceClass="WUser" targetClass="WRole">
+    <AssociationRole1 id="WUser2WRole" name="AppUserToAppRole" maxCard="N"/>
+    <AssociationRole2 id="WRole2WUser" name="AppRoleToAppUser" maxCard="1"/>
+  </Association>
+  <srs:Resources>
+    <srs:ClassService ref="BaseDatos$cls1" refModelId="cls1" pid="BaseDatos" serverResourceName="data/Convocatoria" name="convocatoria">
+      <srs:ServiceScope authenticated="true" method="read"/>
+      <srs:ServiceScope anonymous="true" method="read"/>
+      <srs:Attribute ref="BaseDatos$att1" refModelId="cls1#att1" pid="BaseDatos" serverProperty="oid" name="oid" type="integer" key="true"/>
+      <srs:Attribute ref="BaseDatos$att2" refModelId="cls1#att2" pid="BaseDatos" serverProperty="desde" name="desde" type="date"/>
+      <srs:Attribute ref="BaseDatos$att3" refModelId="cls1#att3" pid="BaseDatos" serverProperty="hasta" name="hasta" type="date"/>
+      <srs:Attribute ref="BaseDatos$att4" refModelId="cls1#att4" pid="BaseDatos" serverProperty="cargo" name="cargo" type="integer"/>
+    </srs:ClassService>
+    <srs:ClassService ref="BaseDatos$User" refModelId="User" pid="BaseDatos" serverResourceName="data/User" name="User">
+      <srs:ServiceScope authenticated="true" method="read"/>
+      <srs:ServiceScope anonymous="true" method="read"/>
+      <srs:Attribute ref="BaseDatos$userName" refModelId="userName" pid="BaseDatos" serverProperty="userID" name="User ID" type="string" key="true"/>
+      <srs:Attribute ref="BaseDatos$secretKey" refModelId="secretKey" pid="BaseDatos" serverProperty="secretKey" name="Secret Key" type="password"/>
+    </srs:ClassService>
+    <srs:UserService ref="BaseDatos$UserService" refModelId="UserService" pid="BaseDatos" name="User" serverResourceName="User" userServiceOperationTypes="read">
+      <srs:ServiceScope anonymous="true" method="read"/>
+      <srs:UserAttribute ref="BaseDatos$userName" refModelId="userName" pid="BaseDatos" serverProperty="userID" name="User ID" type="string" key="true"/>
+    </srs:UserService>
+  </srs:Resources>
+</DomainModel>

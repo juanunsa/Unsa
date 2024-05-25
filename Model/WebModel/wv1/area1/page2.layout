@@ -1,0 +1,36 @@
+<wr-page>
+  <wr-content for="page-content">
+    <wd-data-grid cols="main/lst1/data/{Attribute}*" [rows]="valueOf('main/lst1/data')" [enableFiltering]="true">
+      <wr-content for="header[_be_att1]">
+        {{ labelOf('.') | wrLocalize }}
+      </wr-content>
+      <wr-content for="data[_be_att1]">
+        {{ valueOf('.', row) | number:'wr-integer' }}
+      </wr-content>
+      <wr-content for="header[_be_att2]">
+        {{ labelOf('.') | wrLocalize }}
+      </wr-content>
+      <wr-content for="data[_be_att2]">
+        {{ valueOf('.', row) | date:'wr-date' }}
+      </wr-content>
+      <wr-content for="header[_be_att3]">
+        {{ labelOf('.') | wrLocalize }}
+      </wr-content>
+      <wr-content for="data[_be_att3]">
+        {{ valueOf('.', row) | date:'wr-date' }}
+      </wr-content>
+      <wr-content for="header[_be_att4]">
+        {{ labelOf('.') | wrLocalize }}
+      </wr-content>
+      <wr-content for="data[_be_att4]">
+        {{ valueOf('.', row) | number:'wr-integer' }}
+      </wr-content>
+      <wr-content for="filter[_be_att4]">
+        <wd-input context="/main/frm1/fld1"></wd-input>
+      </wr-content>
+      <wr-content for="filter[_be_att1]">
+        <wd-button context="/main/frm1/oslte3"></wd-button>
+      </wr-content>
+    </wd-data-grid>
+  </wr-content>
+</wr-page>
