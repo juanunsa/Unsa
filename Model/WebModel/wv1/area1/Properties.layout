@@ -1,18 +1,15 @@
 <wr-page>
   <wr-content for="breadcrumb">
+    <wd-menu></wd-menu>
     <wd-menu menu="landmarks/area1/{Landmark}*">
       <wr-content for="menu-item[page1]">
         <wd-menu-item></wd-menu-item>
       </wr-content>
-      <wr-content for="menu-item[page2]">
-        <wd-menu-item></wd-menu-item>
-      </wr-content>
+      <wr-content for="menu-item[page2]"></wr-content>
     </wd-menu>
   </wr-content>
   <wr-content for="brand">
     <wd-image staticImage="assets/logo.jpg"></wd-image>
-    <h1>
-      {{ 'Universidad Nacional de Salta' | wrLocalize }}
-    </h1>
+    <h1></h1>
   </wr-content>
 </wr-page>

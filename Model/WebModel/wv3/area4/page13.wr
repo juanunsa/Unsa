@@ -1,0 +1,43 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="wv3#area4#page13" name="Change password" gr:x="410" gr:y="200" protected="true" layout:pageTemplate="WebDefault/Login">
+  <ViewComponents>
+    <Form id="wv3#area4#page13#frm6" name="Change password" gr:x="20" gr:y="95">
+      <Events>
+        <OnSelectEvent id="wv3#area4#page13#frm6#oslte15" name="Change password" validate="true">
+          <NavigationFlow id="wv3#area4#page13#frm6#oslte15#nf27" to="wv3#area4#act5">
+            <ParameterBinding id="wv3#area4#page13#frm6#oslte15#nf27#par86" source="{wv3#area4#page13#frm6#fld17}value" target="wv3#area4#act5.tlads0#ad4#ipd4#pdp11" name="new password - New password"/>
+            <ParameterBinding id="wv3#area4#page13#frm6#oslte15#nf27#par87" source="{wv3#area4#page13#frm6#fld16}value" target="wv3#area4#act5.tlads0#ad4#ipd4#pdp10" name="current password - Old password"/>
+          </NavigationFlow>
+        </OnSelectEvent>
+      </Events>
+      <Field id="wv3#area4#page13#frm6#fld16" name="current password" type="password" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="wv3#area4#page13#frm6#fld16#mnd11" name="mandatory"/>
+          <PasswordStrengthValidationRule id="wv3#area4#page13#frm6#fld16#psvr4" name="password strength" securityLevel="medium"/>
+        </VRules>
+      </Field>
+      <Field id="wv3#area4#page13#frm6#fld17" name="new password" type="password" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="wv3#area4#page13#frm6#fld17#mnd12" name="mandatory"/>
+          <PasswordStrengthValidationRule id="wv3#area4#page13#frm6#fld17#psvr5" name="password strength" securityLevel="medium"/>
+          <CompareValidationRule id="wv3#area4#page13#frm6#fld17#cmp3" name="not equal current password" predicate="neq" valueField="wv3#area4#page13#frm6#fld16"/>
+        </VRules>
+      </Field>
+      <Field id="wv3#area4#page13#frm6#fld18" name="confirm new password" type="password" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="wv3#area4#page13#frm6#fld18#mnd13" name="mandatory"/>
+          <PasswordStrengthValidationRule id="wv3#area4#page13#frm6#fld18#psvr6" name="password strength" securityLevel="medium"/>
+          <CompareValidationRule id="wv3#area4#page13#frm6#fld18#cmp4" name="equal to new password" predicate="eq" valueField="wv3#area4#page13#frm6#fld17"/>
+        </VRules>
+      </Field>
+    </Form>
+    <Message id="wv3#area4#page13#msg7" name="Error" gr:x="95" gr:y="0">
+      <Events/>
+    </Message>
+    <Message id="wv3#area4#page13#msg8" name="Info" gr:x="0" gr:y="0">
+      <Events/>
+    </Message>
+  </ViewComponents>
+  <layout:Grid containerType="grid">
+    <layout:Row/>
+  </layout:Grid>
+</Page>

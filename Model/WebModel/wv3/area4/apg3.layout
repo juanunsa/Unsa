@@ -1,0 +1,6 @@
+<wr-page>
+  <wr-content for="user">
+    <wd-button context="main/gctu2/oslte17" iconText="exit_to_app" variant="mat-icon-button"></wd-button>
+    <p>Welcome, {{ valueOf('main/dtl2/data/_be_userName')}}</p>
+  </wr-content>
+</wr-page>

@@ -1,0 +1,42 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="wv3#area4" name="Facultad Regional Oran" gr:x="170" gr:y="30" landmark="true" default="wv3#area4#page12" landmarks="wv3#area4#page12">
+  <Action id="wv3#area4#act5" gr:x="700" gr:y="345" definition="tlads0#ad4">
+    <Events>
+      <SuccessEvent id="wv3#area4#act5#scce6" definition="tlads0#ad4#spd4">
+        <NavigationFlow id="wv3#area4#act5#scce6#nf25" to="wv3#area4#page12" automaticCoupling="true"/>
+      </SuccessEvent>
+      <ErrorEvent id="wv3#area4#act5#erre9" definition="tlads0#ad4#epd6">
+        <NavigationFlow id="wv3#area4#act5#erre9#nf26" to="wv3#area4#page13#msg7">
+          <ParameterBinding id="wv3#area4#act5#erre9#nf26#par85" source="tlads0#ad4#epd6#pdp12" target="messages" name="Error Message - Shown Messages"/>
+        </NavigationFlow>
+      </ErrorEvent>
+    </Events>
+  </Action>
+  <Action id="wv3#area4#act6" gr:x="200" gr:y="335" definition="tlads0#ad5">
+    <Events>
+      <SuccessEvent id="wv3#area4#act6#scce7" definition="tlads0#ad5#spd5">
+        <NavigationFlow id="wv3#area4#act6#scce7#nf28" to="wv3#area4#page12" automaticCoupling="true"/>
+      </SuccessEvent>
+      <ErrorEvent id="wv3#area4#act6#erre10" definition="tlads0#ad5#epd7">
+        <NavigationFlow id="wv3#area4#act6#erre10#nf29" to="wv3#area4#page13#msg8">
+          <ParameterBinding id="wv3#area4#act6#erre10#nf29#par95" sourceValue="PASSWORD_EXPIRED" target="messages" name="&quot;PASSWORD_EXPIRED&quot; - Shown Messages"/>
+        </NavigationFlow>
+      </ErrorEvent>
+      <ErrorEvent id="wv3#area4#act6#erre11" definition="tlads0#ad5#epd9">
+        <NavigationFlow id="wv3#area4#act6#erre11#nf32" to="wv3#area4#page14#msg9">
+          <ParameterBinding id="wv3#area4#act6#erre11#nf32#par100" source="tlads0#ad5#epd9#pdp18" target="messages" name="Error Message - Shown Messages"/>
+        </NavigationFlow>
+      </ErrorEvent>
+      <ErrorEvent id="wv3#area4#act6#erre12" definition="tlads0#ad5#epd8">
+        <NavigationFlow id="wv3#area4#act6#erre12#nf31" to="wv3#area4#page14#msg9">
+          <ParameterBinding id="wv3#area4#act6#erre12#nf31#par99" source="tlads0#ad5#epd8#pdp17" target="messages" name="Error Message - Shown Messages"/>
+        </NavigationFlow>
+      </ErrorEvent>
+    </Events>
+  </Action>
+  <Action id="wv3#area4#act7" gr:x="210" gr:y="225" definition="tlads0#ad6">
+    <Events>
+      <SuccessEvent id="wv3#area4#act7#scce8" definition="tlads0#ad6#spd6"/>
+      <ErrorEvent id="wv3#area4#act7#erre13" definition="tlads0#ad6#epd10"/>
+    </Events>
+  </Action>
+</Area>

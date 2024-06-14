@@ -1,0 +1,10 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="5" gr:y="30" id="wv3#area4#page12" name="Inicio" landmark="true" protected="true">
+  <ViewComponents>
+    <Message gr:x="0" gr:y="0" id="wv3#area4#page12#msg10" name="Message 10">
+      <Message xml:space="preserve">Bienvenido al sector docente</Message>
+    </Message>
+  </ViewComponents>
+  <layout:Grid containerType="grid">
+    <layout:Row/>
+  </layout:Grid>
+</Page>

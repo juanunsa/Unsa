@@ -1,0 +1,34 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="wv3#area4#page14" name="Sign in" gr:x="0" gr:y="200" inheritedAbstractPagesManual="true" layout:pageTemplate="WebDefault/Login">
+  <ViewComponents>
+    <Form id="wv3#area4#page14#frm7" name="Sign in" gr:x="0" gr:y="85">
+      <Events>
+        <OnSelectEvent id="wv3#area4#page14#frm7#oslte16" name="Sign in" validate="true">
+          <NavigationFlow id="wv3#area4#page14#frm7#oslte16#nf30" to="wv3#area4#act6">
+            <ParameterBinding id="wv3#area4#page14#frm7#oslte16#nf30#par96" source="{wv3#area4#page14#frm7#fld19}value" target="wv3#area4#act6.tlads0#ad5#ipd5#pdp13" name="Username - Username"/>
+            <ParameterBinding id="wv3#area4#page14#frm7#oslte16#nf30#par97" source="{wv3#area4#page14#frm7#fld20}value" target="wv3#area4#act6.tlads0#ad5#ipd5#pdp14" name="Password - Password"/>
+            <ParameterBinding id="wv3#area4#page14#frm7#oslte16#nf30#par98" source="{wv3#area4#page14#frm7#fld21}value" target="wv3#area4#act6.tlads0#ad5#ipd5#pdp15" name="Remember Me - Remember Me"/>
+          </NavigationFlow>
+        </OnSelectEvent>
+      </Events>
+      <Field id="wv3#area4#page14#frm7#fld19" name="Username" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="wv3#area4#page14#frm7#fld19#mnd14" name="Mandatory"/>
+        </VRules>
+      </Field>
+      <Field id="wv3#area4#page14#frm7#fld20" name="Password" type="password" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="wv3#area4#page14#frm7#fld20#mnd15" name="Mandatory"/>
+        </VRules>
+      </Field>
+      <Field id="wv3#area4#page14#frm7#fld21" name="Remember Me" type="boolean" modifiable="true">
+        <VRules/>
+      </Field>
+    </Form>
+    <Message id="wv3#area4#page14#msg9" name="Sign in error" gr:x="0" gr:y="0">
+      <Events/>
+    </Message>
+  </ViewComponents>
+  <layout:Grid containerType="grid">
+    <layout:Row/>
+  </layout:Grid>
+</Page>

@@ -1,4 +1,4 @@
-<DomainModel xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:srs="http://www.webratio.com/2017/IFML/ServerResources">
+<DomainModel xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:srs="http://www.webratio.com/2017/IFML/ServerResources" xmlns:srsvalidation="http://www.webratio.com/2017/IFML/ServerValidation">
   <Class gr:x="150" gr:y="160" id="WUser" name="App User" singleton="true" attributeOrder="wUserOID wUsername">
     <Attribute id="wUserOID" key="true" name="oid" type="integer"/>
     <Attribute id="wUsername" name="username" type="string"/>
@@ -12,6 +12,32 @@
     <AssociationRole2 id="WRole2WUser" name="AppRoleToAppUser" maxCard="1"/>
   </Association>
   <srs:Resources>
+    <srs:ActionService ref="BaseDatos$ada1" refModelId="tlads0#ada1" pid="BaseDatos" name="guardar titulo" defaultSuccessPortDefinition="tlads0#ada1#spd1" defaultErrorPortDefinition="tlads0#ada1#epd1" serverResourceName="actions/guardarTitulo" method="create">
+      <srs:ServiceScope authenticated="true" method="create"/>
+      <srs:ServiceScope anonymous="true" method="create"/>
+      <srs:Input ref="BaseDatos$pdp10" refModelId="tlads0#ada1#ipd1#pdp10" pid="BaseDatos" serverProperty="userUserIDTituloToUser" name="User.User ID(TituloToUser)" type="string" location="body" cardinality="N"/>
+      <srs:Input ref="BaseDatos$pdp11" refModelId="tlads0#ada1#ipd1#pdp11" pid="BaseDatos" serverProperty="estado" name="estado" type="string" location="body" cardinality="N"/>
+      <srs:Input ref="BaseDatos$pdp12" refModelId="tlads0#ada1#ipd1#pdp12" pid="BaseDatos" serverProperty="nombreTitulo" name="nombreTitulo" type="string" location="body" cardinality="N">
+        <srs:ServerResourceValidation>
+          <srsvalidation:ValidationRule type="MandatoryValidationRule" name="Mandatory3"/>
+        </srs:ServerResourceValidation>
+      </srs:Input>
+      <srs:Input ref="BaseDatos$pdp13" refModelId="tlads0#ada1#ipd1#pdp13" pid="BaseDatos" serverProperty="duracion" name="duracion" type="string" location="body" cardinality="N">
+        <srs:ServerResourceValidation>
+          <srsvalidation:ValidationRule type="MandatoryValidationRule" name="Mandatory1"/>
+        </srs:ServerResourceValidation>
+      </srs:Input>
+      <srs:Input ref="BaseDatos$pdp14" refModelId="tlads0#ada1#ipd1#pdp14" pid="BaseDatos" serverProperty="universidad" name="universidad" type="string" location="body" cardinality="N">
+        <srs:ServerResourceValidation>
+          <srsvalidation:ValidationRule type="MandatoryValidationRule" name="Mandatory4"/>
+        </srs:ServerResourceValidation>
+      </srs:Input>
+      <srs:Input ref="BaseDatos$pdp15" refModelId="tlads0#ada1#ipd1#pdp15" pid="BaseDatos" serverProperty="imagen" name="Imagen" type="blob" location="body" cardinality="N">
+        <srs:ServerResourceValidation>
+          <srsvalidation:ValidationRule type="MandatoryValidationRule" name="Mandatory2"/>
+        </srs:ServerResourceValidation>
+      </srs:Input>
+    </srs:ActionService>
     <srs:ClassService ref="BaseDatos$cls1" refModelId="cls1" pid="BaseDatos" serverResourceName="data/Convocatoria" name="convocatoria">
       <srs:ServiceScope authenticated="true" method="read"/>
       <srs:ServiceScope anonymous="true" method="read"/>
@@ -20,14 +46,45 @@
       <srs:Attribute ref="BaseDatos$att3" refModelId="cls1#att3" pid="BaseDatos" serverProperty="hasta" name="hasta" type="date"/>
       <srs:Attribute ref="BaseDatos$att4" refModelId="cls1#att4" pid="BaseDatos" serverProperty="cargo" name="cargo" type="integer"/>
     </srs:ClassService>
+    <srs:ClassService ref="BaseDatos$cls4" refModelId="cls4" pid="BaseDatos" serverResourceName="data/Investigacion" name="investigacion">
+      <srs:ServiceScope authenticated="true" method="read"/>
+      <srs:ServiceScope anonymous="true" method="read"/>
+      <srs:Attribute ref="BaseDatos$att19" refModelId="cls4#att19" pid="BaseDatos" serverProperty="oid" name="oid" type="integer" key="true"/>
+      <srs:Attribute ref="BaseDatos$att20" refModelId="cls4#att20" pid="BaseDatos" serverProperty="tema" name="tema" type="string"/>
+      <srs:Attribute ref="BaseDatos$att21" refModelId="cls4#att21" pid="BaseDatos" serverProperty="funcion" name="funcion" type="string"/>
+      <srs:Attribute ref="BaseDatos$att22" refModelId="cls4#att22" pid="BaseDatos" serverProperty="fecha" name="fecha" type="date"/>
+    </srs:ClassService>
+    <srs:ClassService ref="BaseDatos$cls3" refModelId="cls3" pid="BaseDatos" serverResourceName="data/Experiencia" name="Experiencia">
+      <srs:ServiceScope authenticated="true" method="read"/>
+      <srs:ServiceScope anonymous="true" method="read"/>
+      <srs:Attribute ref="BaseDatos$att11" refModelId="cls3#att11" pid="BaseDatos" serverProperty="oid" name="oid" type="integer" key="true"/>
+      <srs:Attribute ref="BaseDatos$att13" refModelId="cls3#att13" pid="BaseDatos" serverProperty="materia" name="materia" type="string"/>
+      <srs:Attribute ref="BaseDatos$att14" refModelId="cls3#att14" pid="BaseDatos" serverProperty="carrera" name="carrera" type="string"/>
+      <srs:Attribute ref="BaseDatos$att15" refModelId="cls3#att15" pid="BaseDatos" serverProperty="universidad" name="universidad" type="string"/>
+      <srs:Attribute ref="BaseDatos$att16" refModelId="cls3#att16" pid="BaseDatos" serverProperty="imagen" name="imagen" type="blob"/>
+      <srs:Attribute ref="BaseDatos$att17" refModelId="cls3#att17" pid="BaseDatos" serverProperty="desde" name="desde" type="date"/>
+      <srs:Attribute ref="BaseDatos$att18" refModelId="cls3#att18" pid="BaseDatos" serverProperty="hasta" name="hasta" type="date"/>
+    </srs:ClassService>
     <srs:ClassService ref="BaseDatos$User" refModelId="User" pid="BaseDatos" serverResourceName="data/User" name="User">
       <srs:ServiceScope authenticated="true" method="read"/>
       <srs:ServiceScope anonymous="true" method="read"/>
       <srs:Attribute ref="BaseDatos$userName" refModelId="userName" pid="BaseDatos" serverProperty="userID" name="User ID" type="string" key="true"/>
       <srs:Attribute ref="BaseDatos$secretKey" refModelId="secretKey" pid="BaseDatos" serverProperty="secretKey" name="Secret Key" type="password"/>
     </srs:ClassService>
-    <srs:UserService ref="BaseDatos$UserService" refModelId="UserService" pid="BaseDatos" name="User" serverResourceName="User" userServiceOperationTypes="read">
+    <srs:ClassService ref="BaseDatos$cls2" refModelId="cls2" pid="BaseDatos" serverResourceName="data/Titulo" name="Titulo">
+      <srs:ServiceScope authenticated="true" method="read"/>
       <srs:ServiceScope anonymous="true" method="read"/>
+      <srs:Attribute ref="BaseDatos$att5" refModelId="cls2#att5" pid="BaseDatos" serverProperty="oid" name="oid" type="integer" key="true"/>
+      <srs:Attribute ref="BaseDatos$att6" refModelId="cls2#att6" pid="BaseDatos" serverProperty="nombreTitulo" name="nombreTitulo" type="string"/>
+      <srs:Attribute ref="BaseDatos$att7" refModelId="cls2#att7" pid="BaseDatos" serverProperty="universidad" name="universidad" type="string"/>
+      <srs:Attribute ref="BaseDatos$att9" refModelId="cls2#att9" pid="BaseDatos" serverProperty="duracion" name="duracion" type="string"/>
+      <srs:Attribute ref="BaseDatos$att10" refModelId="cls2#att10" pid="BaseDatos" serverProperty="estado" name="estado" type="string"/>
+      <srs:Attribute ref="BaseDatos$att12" refModelId="cls2#att12" pid="BaseDatos" serverProperty="imagen" name="Imagen" type="blob"/>
+    </srs:ClassService>
+    <srs:UserService ref="BaseDatos$UserService" refModelId="UserService" pid="BaseDatos" name="User" serverResourceName="User" userServiceOperationTypes="read register update">
+      <srs:ServiceScope authenticated="true" method="read"/>
+      <srs:ServiceScope authenticated="true" method="register"/>
+      <srs:ServiceScope authenticated="true" method="update"/>
       <srs:UserAttribute ref="BaseDatos$userName" refModelId="userName" pid="BaseDatos" serverProperty="userID" name="User ID" type="string" key="true"/>
     </srs:UserService>
   </srs:Resources>
